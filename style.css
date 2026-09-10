@@ -267,7 +267,7 @@ MODAL
   border-radius: 20px;
   overflow: hidden; 
   display: flex;
-  z-index: -1;
+  /* z-index: -1; */
   transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
  
@@ -287,11 +287,11 @@ MODAL
   transition: all 300ms ease-in;
 }
 
-.modal--open .modal__about,
+/* .modal--open .modal__about,
 .modal--open .modal__contact
 {
   transform: translateX(0%);
-}
+} */
 
 .modal__about {
   background-color: rgb(245, 245, 245);
@@ -431,7 +431,6 @@ MODAL
   0% {
     transform: rotate(0);
   }
-  ]
 
   100% {
     transform: rotate(360deg);
