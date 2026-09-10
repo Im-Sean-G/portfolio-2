@@ -6,6 +6,16 @@
   <title>Sean G - E-Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/e8cebabe41.js" crossorigin="anonymous"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "OSsOV_yTW8hBeFR22",
+      });
+   })();
+</script>
 </head>
 <body>
   <section id="landing-page">
@@ -70,7 +80,7 @@
         </div>      
       </div>
     </header>
-    <button class="mail__btn click">
+    <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
     </button>
     <a href="#projects" class="scroll">
@@ -78,21 +88,79 @@
     </a>
     <div class="modal">
       <div class="modal__half modal__about">
-        <h3 class="modal__title modal__title--about">Here's a little bit about me.
+        <h3 class="modal__title modal__title--about">Here's a bit about me.
         </h3>
         <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Developer</h4>
         <p class="modal__para">
-          I'm  a growing software developer with a passion for designing and creating websites with great user experiences.
+          I'm  a growing <b class="green">software developer</b> with a passion for designing and creating websites with <b class="green">great user experiences.</b>
           <br>
-          I enjoy working to solve problems and am looking for a role that will enable me to make an impact and grow in my skills & knowlege.
+          I enjoy working to <b class="green">solve problems</b> and thrive in roles where I can make an impact and grow in my <b class="green">skills & knowledge.</b>
         </p>
         <div class="modal__languages">
-          <figure>
-            <img class="modal__language--img src="" alt="">
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/HTML5_Badge.png" alt="html badge">
+            <p class="language__name">HTML</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/css_badge.png" alt="html badge">
+            <p class="language__name">CSS</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/javascript-logo.png" alt="html badge">
+            <p class="language__name">JavaScript</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/up-next.png" alt="html badge">
+            <p class="language__name">...loading</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/up-next.png" alt="html badge">
+            <p class="language__name">...loading</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/up-next.png" alt="html badge">
+            <p class="language__name">...loading</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/up-next.png" alt="html badge">
+            <p class="language__name">...loading</p>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/up-next.png" alt="html badge">
+            <p class="language__name">...loading</p>
           </figure>
         </div>
       </div>
-      <div class="modal__half modal__contact">Let's have a chat!</div>
+      <div class="modal__half modal__contact">
+        <h3 class="modal__title modal__title--about">Let's have a chat!
+        </h3>
+        <h4 class="modal__sub-title modal__sub-title--about">I am open to new opportunities.
+        </h4>
+        <form id="contact__form">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" required="">
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Email</label>
+            <input class="input" name="user_email" type="email" required="">
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Message</label>
+            <textarea class="input" name="message" type="text" required=""></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">
+            Send it
+          </button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message!<br> <br>Looking forward to speaking with you soon.
+        </div>
+      </div>
+      <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
     </div>
   </section>
   <section id="projects">
