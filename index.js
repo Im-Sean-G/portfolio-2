@@ -1,18 +1,21 @@
-// Open Modal 
-
 let isModalOpen = false;
-function toggleModal() {
-  if (isModalOpen) {
-    isModalOpen = false;
-    return document.body.classList.remove("modal--open");
+let contrastToggle = false;
+
+// Toggle Contrast
+
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if(contrastToggle) {
+    document.body.classList += " dark-theme";
   }
-  isModalOpen = true;
-  document.body.classList += " modal--open";
+  else {
+    document.body.classList.remove("dark-theme")
+  }
+  
 }
 
 
 // Email Contact
-
 // template_2w0sbig
 // service_1eyogya
 // OSsOV_yTW8hBeFR22
@@ -37,4 +40,9 @@ function contact(event) {
       "The email service is temporarily unavailable. Please contact me directly at seanrgallagher88@gmail.com"
     );
   })
+}
+
+// Toggle Modal
+function toggleModal() {
+  document.body.classList.toggle("modal--open");
 }
