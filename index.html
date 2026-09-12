@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="index.js"></script>
   <script src="https://kit.fontawesome.com/e8cebabe41.js" crossorigin="anonymous"></script>
-  <script type="text/javascript"
+ <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script type="text/javascript">
@@ -18,14 +18,14 @@
    })();
 </script>
 </head>
-<body>
+<body class=" modal--open">
   <section id="landing-page">
     <nav>
       <figure>
         <img class="nav__logo" src="assets/seang-logo.png" alt="Sean G" /> 
       </figure>
       <ul class="nav__link--list">
-        <li class="nav__link">
+        <li class="nav__link" onclick="toggleModal()">
           <a href="#" class="
           nav__link--anchor
           link__hover-effect
@@ -41,7 +41,7 @@
           ">Projects
           </a>
         </li>
-        <li class="nav__link">
+        <li class="nav__link" onclick="toggleModal()">
           <a href="#Contacts" class="
           nav__link--anchor
           link__hover-effect
@@ -66,7 +66,7 @@
         <p class="header__para">
           I'm a growing <b class="green">Frontend Web Developer</b> looking to gain experience building, maintaining, and deploying user-focused web applications.
           <br>
-          Here's some more <b class="green">about me.</b>
+          Here's some more <b class="green click" onclick="toggleModal()">about me.</b>
         </p>
         <div class="social__list">
           <a href="https://www.linkedin.com/in/seanrgallagher88" target="_blank" class="social__link click">
@@ -137,18 +137,18 @@
         </h3>
         <h4 class="modal__sub-title modal__sub-title--about">I am open to new opportunities.
         </h4>
-        <form id="contact__form" onsubmit="contact()">
+        <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
             <label class="form__item--label">Name</label>
-            <input class="input" name="user_name" type="text" required="">
+            <input class="input" name="user_name" type="text" required>
           </div>
           <div class="form__item">
             <label class="form__item--label">Email</label>
-            <input class="input" name="user_email" type="email" required="">
+            <input class="input" name="user_email" type="email" required>
           </div>
           <div class="form__item">
             <label class="form__item--label">Message</label>
-            <textarea class="input" name="message" type="text" required=""></textarea>
+            <textarea class="input" name="message" type="text" required></textarea>
           </div>
           <button id="contact__submit" class="form__submit">
             Send it
